@@ -1,7 +1,7 @@
 import type { TFunction } from "i18next";
 import { getFieldById, getTranslatedDimensionValueLabel } from "@/modules/ee/analysis/lib/schema-definition";
 
-export const BOOLEAN_DIMENSION_VALUES = ["true", "false"] as const;
+export const BOOLEAN_DIMENSION_VALUES: readonly string[] = ["true", "false"];
 
 export function getChartDimensionValueLabel(
   dimensionId: string,

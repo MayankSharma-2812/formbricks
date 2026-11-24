@@ -171,8 +171,9 @@ export function getLegacyBooleanFilterValueOption(
 ): TComboboxOption | undefined {
   // Free-text filters could store other spellings. Show the saved value until a user replaces it.
   if (typeof value !== "string" && typeof value !== "number") return undefined;
-  if (value === "" || BOOLEAN_DIMENSION_VALUES.some((token) => token === value)) return undefined;
-  return { value, label: String(value), disabled: true };
+  const label = String(value);
+  if (label === "" || BOOLEAN_DIMENSION_VALUES.includes(label)) return undefined;
+  return { value, label, disabled: true };
 }
 
 export function getNpsSegmentLabel(segment: TNpsSegment, t: TFunction): string {
